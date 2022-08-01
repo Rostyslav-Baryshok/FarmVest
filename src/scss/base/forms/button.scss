@@ -2,13 +2,19 @@
 // Снипет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+  font-family: Lato;
+  font-weight: 500;
+  display: inline-block;
+  line-height: math.div(22, 18);
+  padding: rem(21) rem(25);
+  background-color: #23b123;
+  border-radius: rem(10);
+  height: 64px;
+  @media (any-hover: hover) {
+    &:hover {
+    }
+  }
+  &._fw {
+    width: 100%;
+  }
 }
