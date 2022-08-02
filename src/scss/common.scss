@@ -7,10 +7,11 @@
 //========================================================================================================================================================
 
 .title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: rem(70);
-  line-height: math.div(78, 70);
+  line-height: math.div(65, 70);
   color: #ffffff;
+  @include adaptiveValue("font-size", 70, 45);
   span {
     color: $accentColor;
   }
