@@ -22,7 +22,9 @@
     padding: rem(20) rem(25);
     @media (any-hover: hover) {
       &:hover {
-        background-color: #1b2327;
+        color: $accentColor;
+        border: solid 1px $accentColor;
+        background-color: transparent;
       }
     }
   }

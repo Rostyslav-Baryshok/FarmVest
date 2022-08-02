@@ -1,5 +1,9 @@
 //====================================================================================================
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   @include adaptiveValue("padding-top", 60, 10);
   @include adaptiveValue("padding-bottom", 60, 10);
   // .header__container-big
@@ -99,6 +103,12 @@
   &__link {
     @media (max-width: $mobile) {
       font-size: rem(40);
+    }
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $accentColor;
+      }
     }
   }
 }
