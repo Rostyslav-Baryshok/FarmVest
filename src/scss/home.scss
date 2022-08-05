@@ -183,7 +183,6 @@
   }
   // .how__image
   &__image {
-    align-self: start;
   }
 }
 .steps-how {
@@ -235,10 +234,10 @@
   @include adaptiveValue("padding-bottom", 100, 25);
   // .pathway__container
   &__container {
-    display: grid;
+    display: flex;
     row-gap: rem(30);
-    @media (min-width: $tablet) {
-      grid-template-columns: percent(694, 1420) 1fr;
+    @media (max-width: $tablet) {
+      flex-direction: column-reverse;
     }
     // .pathway__container_big
     &_big {
@@ -246,6 +245,7 @@
   }
   // .pathway__image
   &__image {
+    flex: 0 0 percent(694, 1420);
     .image-block__circl {
       top: auto;
       right: auto;
@@ -265,7 +265,12 @@
   }
   // .pathway__content
   &__content {
+    flex: 1 1 auto;
     @include adaptiveValue("padding-left", 126, 30, 1420, 992, 2);
+    @media (max-width: 991px) {
+      text-align: center;
+      padding-left: 0;
+    }
   }
   // .pathway__title
   &__title {
@@ -301,7 +306,8 @@
     border-radius: 10px;
     display: flex;
     line-height: 177%;
-    font-size: rem(24);
+    gap: rem(10);
+    @include adaptiveValue("font-size", 24, 18);
     align-items: center;
     justify-content: space-between;
     &::after {
@@ -316,10 +322,66 @@
         transform: rotate(-180deg);
       }
     }
+    @media (max-width: $mobileSmall) {
+      line-height: 130%;
+      padding: rem(18) rem(20);
+    }
   }
   // .spollers-pathway__body
   &__body {
     padding: rem(10) rem(30) rem(10) rem(30);
+    @media (max-width: $mobileSmall) {
+      padding: rem(0) rem(20) rem(18) rem(20);
+    }
   }
 }
 //========================================================================================================================================================
+
+.why {
+  @include adaptiveValue("padding-top", 100, 25);
+  @include adaptiveValue("padding-bottom", 100, 25);
+  // .why__container
+  &__container {
+    display: grid;
+    row-gap: rem(30);
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr percent(680, 1420);
+    }
+  }
+  // .why__content
+  &__content {
+    @include adaptiveValue("padding-right", 177, 30, 1420, 992, 2);
+    @media (max-width: $mobileSmall) {
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+  // .why__title
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+  }
+  // .why__text
+  &__text {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 48, 30);
+    }
+  }
+  // .why__steps
+  &__steps {
+  }
+  // .why__button
+  &__button {
+  }
+  // .why__image
+  &__image {
+    // background-color: transparent;
+    // padding: 0;
+  }
+}
+.steps-why {
+  // .steps-why__item
+  &__item {
+  }
+}

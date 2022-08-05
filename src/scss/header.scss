@@ -11,7 +11,7 @@
   &._header-scroll {
     padding-top: rem(20);
     padding-bottom: rem(20);
-    background-color: rgb(18 24 27 / 95%);
+    background-color: rgb(32 43 48 / 95%);
   }
   // .header__container-big
   &__container-big {
@@ -79,7 +79,7 @@
         transition: all 0.3s ease 0s;
         width: 100%;
         @include adaptiveValue("height", 105, 72, 768, 320, 2);
-        background-color: #141a1d;
+        background-color: rgb(32 43 48);
         z-index: 2;
       }
       .menu-open & {
