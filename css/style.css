@@ -1784,7 +1784,7 @@ body {
   }
 }
 
-@media (min-width: 20em) and (max-width: 103.125em) {
+@media (min-width: 29.99875em) and (max-width: 103.125em) {
 @supports (font-size: clamp( 2.8125rem , 2.4365601504rem  +  1.8796992481vw , 4.375rem )) {
     .title {
       font-size: clamp( 2.8125rem , 2.4365601504rem  +  1.8796992481vw , 4.375rem );
@@ -2570,7 +2570,7 @@ body {
 }
 }
 
-@media (min-width: 0.0625em) and (max-width: 48em) {
+@media (min-width: 29.99875em) and (max-width: 48em) {
 @supports (width: clamp( 7.5rem , 7.4981258149rem  +  2.998696219vw , 8.9375rem )) {
     .header__logo {
       width: clamp( 7.5rem , 7.4981258149rem  +  2.998696219vw , 8.9375rem );
@@ -2596,7 +2596,7 @@ body {
   }
 }
 
-@media (max-width: 47.99875em) and (min-width: 0.125em) and (max-width: 20em) {
+@media (max-width: 47.99875em) and (min-width: 29.99875em) and (max-width: 20em) {
 @supports (padding-top: clamp( 7.5rem , 7.4842767296rem  +  12.5786163522vw , 10rem )) {
     .menu__body {
       padding-top: clamp( 7.5rem , 7.4842767296rem  +  12.5786163522vw , 10rem );
@@ -2633,7 +2633,7 @@ body {
   }
 }
 
-@media (min-width: 0.125em) and (max-width: 62em) {
+@media (min-width: 29.99875em) and (max-width: 62em) {
 @supports (padding-right: clamp( 1.875rem , 1.8667929293rem  +  6.5656565657vw , 5.9375rem )) {
     .how__content {
       padding-right: clamp( 1.875rem , 1.8667929293rem  +  6.5656565657vw , 5.9375rem );
