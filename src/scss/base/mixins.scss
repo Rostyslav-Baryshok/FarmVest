@@ -94,8 +94,9 @@
       #{$property}: rem($startSize);
     }
   }
+
   // Адаптируем размер в промежутке между указанными ширинами вьюпорта
-  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+  @media (min-width: $mobileSmall) and (max-width: $widthFromMedia) {
     // Если поддерживается clamp();
     @supports (#{$property}: $propertyValue) {
       #{$property}: $propertyValue;
