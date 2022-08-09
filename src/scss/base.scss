@@ -131,13 +131,27 @@
 }
 // Тема
 .page__theme {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   flex: 0 0 30px;
   cursor: pointer;
+  @media (max-width: $mobile) {
+    width: 20px;
+    height: 20px;
+  }
 }
 .page__action {
-  position: relative;
+  position: absolute;
+  top: 165px;
+  right: 27px;
+  z-index: 2;
+  @media (max-width: $mobile) {
+    top: 110px;
+    right: 2px;
+  }
+  @media (max-width: $mobileSmall) {
+    top: 95px;
+  }
 }
 .page__reset {
   opacity: 0;
@@ -154,11 +168,11 @@ html.dark body {
 }
 html.light body {
   background-color: #fff;
-  color: #333; // 263238
+  color: #263238;
 }
 
 html.light ._header-scroll {
-  background-color: rgb(242 248 242 / 95%);
+  background-color: rgb(231 255 231 / 95%);
 }
 
 html.light .button_border {
@@ -170,6 +184,7 @@ html.light .button_border {
 
 html.light .title {
   color: rgba(38, 50, 56, 1);
+  z-index: 1;
 }
 
 html.light .form {
@@ -182,11 +197,65 @@ html.light .image-block {
   background: rgba(0, 128, 0, 0.05);
 }
 html.light .image-block__circle::before {
-  border: 1px solid #008000;
+  border: 1px solid #23b123;
+}
+html.light .button {
+  color: #fff;
+}
+html.light .button_border {
+  color: #263238;
+  &:hover {
+    color: #23b123;
+  }
+}
+
+html.light .footer,
+html.light .download__body,
+html.light .item-reviews__body,
+html.light .spollers-pathway__item {
+  background: rgba(0, 128, 0, 0.05);
+}
+
+html.light .icons-main-block__circle::before {
+  border: 1px solid #23b123;
+}
+
+html.light .steps-why__item::before {
+  background: rgba(0, 128, 0, 0.05);
+  color: #23b123;
+}
+
+html.light .download__circle::before {
+  border: 1px solid #23b123;
+}
+
+html.light .social__item {
+  background-color: #c6ffc6;
+  &:hover {
+    background-color: transparent;
+  }
+}
+html.light .footer__main {
+  border-bottom: 1px solid rgba(38, 50, 56, 0.31);
+}
+html.light .icon-menu::before,
+html.light .icon-menu::after,
+html.light .icon-menu span {
+  background-color: #263238;
+}
+html.light .menu__body::before {
+  background-color: rgb(231 255 231);
+}
+
+html.light .menu__body {
+  @media (max-width: $mobile) {
+    background: rgb(195 255 195);
+  }
+  // background: rgb(195 255 195);
 }
 //   html.light
 //   html.light
-//   html.light`
+//   html.light
 .page__theme {
   background: url("../img/theme-icon/sun.svg") 0 0 / 100% no-repeat;
 }

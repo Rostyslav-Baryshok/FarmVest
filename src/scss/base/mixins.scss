@@ -24,6 +24,7 @@
   $result: math.div($px, $current) + em;
   @return $result;
 }
+//Адаптивное свойство
 
 //Currency
 @mixin currency($sym) {
@@ -44,9 +45,9 @@
   $property,
   $startSize,
   $minSize,
-  $keepSize: 0,
   $widthFrom: $containerWidth,
-  $widthTo: $minWidth
+  $widthTo: $minWidth,
+  $keepSize: 0
 ) {
   @if ($startSize==0) {
     $startSize: 0.000001;
@@ -88,32 +89,37 @@
       ")"};
   }
 
-  // Устанавливаем значения по умолчанию
-  @if $keepSize != 1 and $keepSize != 3 {
-    @media (min-width: $widthFromMedia) {
-      #{$property}: rem($startSize);
-    }
+  // Если поддерживается clamp();
+  @supports (#{$property}: $propertyValue) {
+    #{$property}: $propertyValue;
+  }
+  // Если не поддерживается clamp();
+  @supports not (#{$property}: $propertyValue) {
+    #{$property}: calc(
+      #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div(
+          $widthFrom,
+          16
+        ) - math.div($widthTo, 16)}
+    );
   }
 
-  // Адаптируем размер в промежутке между указанными ширинами вьюпорта
-  @media (min-width: $mobileSmall) and (max-width: $widthFromMedia) {
-    // Если поддерживается clamp();
-    @supports (#{$property}: $propertyValue) {
-      #{$property}: $propertyValue;
-    }
-    // Если не поддерживается clamp();
-    @supports not (#{$property}: $propertyValue) {
-      #{$property}: calc(
-        #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div(
-            $widthFrom,
-            16
-          ) - math.div($widthTo, 16)}
-      );
+  // Устанавливаем значения по умолчанию
+  @if $widthFrom !=
+    $containerWidth and
+    $widthFrom !=
+    $maxWidth and
+    $keepSize !=
+    1 and
+    $keepSize !=
+    2
+  {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: inherit;
     }
   }
-  @if $keepSize != 1 and $keepSize != 2 {
+  @if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
     @media (max-width: $widthToMedia) {
-      #{$property}: rem($minSize);
+      #{$property}: inherit;
     }
   }
 }

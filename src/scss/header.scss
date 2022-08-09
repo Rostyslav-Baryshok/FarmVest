@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 49;
   transition: all 0.3s ease 0s;
   @include adaptiveValue("padding-top", 60, 10);
   @include adaptiveValue("padding-bottom", 60, 10);
@@ -67,6 +67,7 @@
       overflow: auto;
       background-color: #1b2327;
       gap: rem(30);
+      z-index: 3;
       @include adaptiveValue("padding-top", 160, 120, 768, 320, 2);
       padding-left: rem(15);
       padding-right: rem(15);
