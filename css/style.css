@@ -251,6 +251,79 @@ body {
      object-fit: contain;
 }
 
+.page__theme {
+  width: 30px;
+  height: 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+  cursor: pointer;
+}
+
+.page__action {
+  position: relative;
+}
+
+.page__reset {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.page__reset.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+html.dark body {
+  color: #fff;
+  background-color: #263238;
+}
+
+html.light body {
+  background-color: #fff;
+  color: #333;
+}
+
+html.light ._header-scroll {
+  background-color: rgba(242, 248, 242, 0.95);
+}
+
+html.light .button_border {
+  border: 1px solid #263238;
+}
+
+html.light .button_border:hover {
+  border: 1px solid #23b123;
+}
+
+html.light .title {
+  color: rgb(38, 50, 56);
+}
+
+html.light .form {
+  background: rgba(38, 50, 56, 0.1);
+}
+
+html.light input {
+  background: rgba(38, 50, 56, 0);
+}
+
+html.light .image-block {
+  background: rgba(0, 128, 0, 0.05);
+}
+
+html.light .image-block__circle::before {
+  border: 1px solid #008000;
+}
+
+.page__theme {
+  background: url("../img/theme-icon/sun.svg") 0 0/100% no-repeat;
+}
+
+html.light .page__theme {
+  background: url("../img/theme-icon/evening.svg") 0 0/100% no-repeat;
+}
+
 .title {
   font-weight: 600;
   font-size: 4.375rem;
