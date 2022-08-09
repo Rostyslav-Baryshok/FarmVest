@@ -31,20 +31,20 @@
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
 [class*="-ibg"] {
-	position: relative;
-	img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
-	}
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
 }
 [class*="-ibg_contain"] {
-	img {
-		object-fit: contain;
-	}
+  img {
+    object-fit: contain;
+  }
 }
 
 // Шаблоны (заготовки)
@@ -53,79 +53,143 @@
 
 // Счетчик для списка
 %listCounter {
-	list-style-type: none;
-	counter-reset: item;
-	li {
-		position: relative;
-		&:before {
-			counter-increment: item;
-			content: counter(item);
-			position: absolute;
-			left: 0;
-			top: 0;
-		}
-	}
+  list-style-type: none;
+  counter-reset: item;
+  li {
+    position: relative;
+    &:before {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 }
 // Адаптивное видео
 %responsiveVideo {
-	position: relative;
-	overflow: hidden;
-	height: 0;
-	padding-bottom: 56.25%;
-	video,
-	iframe,
-	object,
-	embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+  video,
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 // Видео в качестве фона
 %videoBackground {
-	video,
-	iframe,
-	object,
-	embed {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
-		transform: translateX(-50%) translateY(-50%);
-		background-size: cover;
-	}
+  video,
+  iframe,
+  object,
+  embed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+  }
 }
 // Серый фильтр
 %grayfilter {
-	transition: all 0.3s ease 0s;
-	filter: grayscale(1);
-	@media (any-hover: hover) {
-		&:hover {
-			filter: grayscale(0);
-		}
-	}
+  transition: all 0.3s ease 0s;
+  filter: grayscale(1);
+  @media (any-hover: hover) {
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
 }
 // Отменить выделение
 %noselect {
-	user-select: none;
+  user-select: none;
 }
 // Зеркальное отображение
 %mirror {
-	transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 // Плавный скролл
 %smoothscroll {
-	-webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
 }
 // Скрыть скролл
 %hidescroll {
-	&::-webkit-scrollbar {
-		display: none;
-	}
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+// Тема
+.page__theme {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  cursor: pointer;
+}
+.page__action {
+  position: relative;
+}
+.page__reset {
+  opacity: 0;
+  visibility: hidden;
+}
+.page__reset.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+html.dark body {
+  color: #fff;
+  background-color: #263238;
+}
+html.light body {
+  background-color: #fff;
+  color: #333; // 263238
+}
+
+html.light ._header-scroll {
+  background-color: rgb(242 248 242 / 95%);
+}
+
+html.light .button_border {
+  border: 1px solid #263238;
+  &:hover {
+    border: 1px solid #23b123;
+  }
+}
+
+html.light .title {
+  color: rgba(38, 50, 56, 1);
+}
+
+html.light .form {
+  background: rgba(38, 50, 56, 0.1);
+}
+html.light input {
+  background: rgba(38, 50, 56, 0);
+}
+html.light .image-block {
+  background: rgba(0, 128, 0, 0.05);
+}
+html.light .image-block__circle::before {
+  border: 1px solid #008000;
+}
+//   html.light
+//   html.light
+//   html.light
+.page__theme {
+  background: url("../img/theme-icon/sun.svg") 0 0 / 100% no-repeat;
+}
+html.light .page__theme {
+  background: url("../img/theme-icon/evening.svg") 0 0 / 100% no-repeat;
 }
