@@ -2141,6 +2141,7 @@ html.light .page__theme {
 
   .menu-open .menu__body::before {
     left: 0;
+    height: 100px;
   }
 
   .menu__list {
