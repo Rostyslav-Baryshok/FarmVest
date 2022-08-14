@@ -748,11 +748,6 @@
     function windowLoad() {
         const htmlBlock = document.documentElement;
         const saveUserTheme = localStorage.getItem("user-theme");
-        let userTheme;
-        if (window.matchMedia) userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e => {
-            !saveUserTheme ? changeTheme() : null;
-        }));
         const themeButton = document.querySelector(".page__theme");
         const resetButton = document.querySelector(".page__reset");
         if (themeButton) themeButton.addEventListener("click", (function(e) {
