@@ -8,17 +8,17 @@ function windowLoad() {
   const saveUserTheme = localStorage.getItem("user-theme");
 
   // Робота з системними налаштуваннями
-  let userTheme;
-  if (window.matchMedia) {
-    userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  }
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      !saveUserTheme ? changeTheme() : null;
-    });
+  // let userTheme;
+  // if (window.matchMedia) {
+  //   userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  //     ? "dark"
+  //     : "light";
+  // }
+  // window
+  //   .matchMedia("(prefers-color-scheme: dark)")
+  //   .addEventListener("change", (e) => {
+  //     !saveUserTheme ? changeTheme() : null;
+  //   });
 
   // Зміна теми по кліку
   const themeButton = document.querySelector(".page__theme");
