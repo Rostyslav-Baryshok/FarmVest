@@ -135,7 +135,7 @@ const config = {
         },
         {
           from: `${paths.src}/favicon.ico`,
-          to: `./`,
+          to: `../`,
           noErrorOnMissing: true,
         },
       ],
